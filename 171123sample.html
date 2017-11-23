@@ -1,0 +1,27 @@
+<!-- https://qiita.com/opengl-8080/items/2fe0a20c314b1c824cc5　より学習-->
+
+<!DOCTYPE html>
+<html lang='ja' ng-app='myapp'>
+<head>
+  <meta charset='utf-8'>
+  <script src='angular.min.js'></script>
+  <script src='171123sample.js'></script>
+</head>
+<body>
+  <form ng-controller='SampleController'>
+    <p>
+    <input type='text' ng-model='text' />
+    <input type='checkbox' ng-model='checkbox' />
+    <input type='radio' name='hoge' value='HOGE' ng-model='radio' />HOGE
+    <input type='radio' name='hoge' value='FUGA' ng-model='radio' />FUGA
+    <select ng-model='select'>
+      <option value='foo'>Foo</option>
+      <option value='bar'>Bar</option>
+    </select>
+  </p>
+    <p><input type='submit' value='submit'></p>
+    <button ng-click='click()'>Push</button>
+    <p>{{message}}</p>
+  </form>
+</body>
+</html>
