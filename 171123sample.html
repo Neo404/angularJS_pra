@@ -6,6 +6,23 @@
   <meta charset='utf-8'>
   <script src='angular.min.js'></script>
   <script src='171123sample.js'></script>
+  <style>
+    .red{
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+    .solid-border {
+      border: 1px solid black;
+    }
+    .dotted-border {
+      border: 1px dotted black;
+    }
+    li {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <form ng-controller='SampleController'>
@@ -14,14 +31,29 @@
     <input type='checkbox' ng-model='checkbox' />
     <input type='radio' name='hoge' value='HOGE' ng-model='radio' />HOGE
     <input type='radio' name='hoge' value='FUGA' ng-model='radio' />FUGA
-    <select ng-model='select'>
-      <option value='foo'>Foo</option>
-      <option value='bar'>Bar</option>
-    </select>
-  </p>
+      <select ng-model='select'>
+        <option value='foo'>Foo</option>
+        <option value='bar'>Bar</option>
+      </select>
+      <li ng-repeat='item in items'>{{$index}} {{item.key}} : {{item.value}}</li>
+      <li ng-class='hoge'>hoge</li>
+      <li ng-class="['blue', 'solid-border']">fuga</li>
+      <li ng-class="{'red': isRed, 'dotted-border': isDotted}">apple</li>
+    </p>
     <p><input type='submit' value='submit'></p>
+    <div ng-show='true'>
+      Visible
+    </div>
+    <div ng-show='false'>
+      Invisible
+    </div>
     <button ng-click='click()'>Push</button>
+    <button ng-click='change()'>Change</button>
     <p>{{message}}</p>
+    <p>{{message2}}</p>
+    hoge : <input type='number' ng-model='first_number' /><br />
+    fuga : <input type='number' ng-model='second_number' /><br />
+    <p>合計 : {{sum}}</p>
   </form>
 </body>
 </html>
